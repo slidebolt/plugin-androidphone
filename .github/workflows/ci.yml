@@ -21,4 +21,4 @@ jobs:
         with:
           go-version-file: go.mod
       - run: go test ./...
-      - run: go build ./cmd/plugin-clean
+      - run: go build ./cmd/plugin-androidphone
