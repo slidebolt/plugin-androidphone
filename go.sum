@@ -111,8 +111,8 @@ github.com/slidebolt/sb-api v1.0.2 h1:BxhNvAEDxfgBQOYjIgq6UJA6lTucyeVQO8WOyKj64d
 github.com/slidebolt/sb-api v1.0.2/go.mod h1:WFmVqQ1m6ZY69DB/2f0VU82Y488sJjEt7sBVe3aqZqU=
 github.com/slidebolt/sb-contract v1.0.2 h1:9jdyQyRh0iyjk0F9bS2Mb/fWDfv3rAA2Hg2wb3Fs8uQ=
 github.com/slidebolt/sb-contract v1.0.2/go.mod h1:nG2ebwepjRdd2t6cA0VFV34FuWJUF7DQrqcVVxDsza8=
-github.com/slidebolt/sb-domain v1.0.2 h1:ePPp+mztXmKdpDrw0udZgWtzFh1OZHPKHg5GxOE7oAc=
-github.com/slidebolt/sb-domain v1.0.2/go.mod h1:F3tFWsZ4jqqHpeAWlXS1/fpsjMmN0WtcbCiTcKwfh9Y=
+github.com/slidebolt/sb-domain v1.0.3 h1:ARCJRriiGJsWjtMDrzbVv5FP4R7JtscV2PFtqNfyv4c=
+github.com/slidebolt/sb-domain v1.0.3/go.mod h1:F3tFWsZ4jqqHpeAWlXS1/fpsjMmN0WtcbCiTcKwfh9Y=
 github.com/slidebolt/sb-messenger-sdk v1.0.2 h1:pBUjRbSJxblemTu/OWb7fgs3jr2T/LH9JrgPO7LKZpY=
 github.com/slidebolt/sb-messenger-sdk v1.0.2/go.mod h1:yJxHiUgqcO/TUj9yiPkVyTwrN0/3BBy6HD17TdWPCEA=
 github.com/slidebolt/sb-runtime v1.0.2 h1:/E3/esIoDjzPhtyOhPtZaJCOXiIxZ1OdqFcJ6eqhFag=
