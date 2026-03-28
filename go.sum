@@ -109,8 +109,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/rogpeppe/go-internal v1.14.1 h1:UQB4HGPB6osV0SQTLymcB4TgvyWu6ZyliaW0tI/otEQ=
 github.com/rogpeppe/go-internal v1.14.1/go.mod h1:MaRKkUm5W0goXpeCfT7UZI6fk/L7L7so1lCWt35ZSgc=
-github.com/slidebolt/sb-api v1.0.3 h1:1IplD9rtMyYHCO6DtFYjkFh/aJapaf6DCQ+E7q6YiXA=
-github.com/slidebolt/sb-api v1.0.3/go.mod h1:xSCFQkfLyyYGOJIPeAqIhHkPVZYnMjRw0p88PmMe42Q=
+github.com/slidebolt/sb-api v1.0.4 h1:WrTroSGzXt/5z1znGk1MvWGdxuhhjX0HeKnmYSsF6Jk=
+github.com/slidebolt/sb-api v1.0.4/go.mod h1:DFpumcX0gT1y7xUTvUjHRS1mQmLWFFHKH6wEa94PDvU=
 github.com/slidebolt/sb-contract v1.0.2 h1:9jdyQyRh0iyjk0F9bS2Mb/fWDfv3rAA2Hg2wb3Fs8uQ=
 github.com/slidebolt/sb-contract v1.0.2/go.mod h1:nG2ebwepjRdd2t6cA0VFV34FuWJUF7DQrqcVVxDsza8=
 github.com/slidebolt/sb-domain v1.0.3 h1:ARCJRriiGJsWjtMDrzbVv5FP4R7JtscV2PFtqNfyv4c=
@@ -121,8 +121,8 @@ github.com/slidebolt/sb-runtime v1.0.2 h1:/E3/esIoDjzPhtyOhPtZaJCOXiIxZ1OdqFcJ6e
 github.com/slidebolt/sb-runtime v1.0.2/go.mod h1:cEdqVwPa05iCS8Ilnww3j7nhyj9SDU6YmRycb8OUqVQ=
 github.com/slidebolt/sb-script v1.0.2 h1:e9TQOetNYx3CsxYhV+ueY76oKTDES0kPHF79EVqkHck=
 github.com/slidebolt/sb-script v1.0.2/go.mod h1:KFwZRIUXpIMwEfL7FcaYqVtah744PZkZyCiaZqF5h9s=
-github.com/slidebolt/sb-storage-sdk v1.0.2 h1:EWXpr6jurjas42XCar+CYed4kSc5y1NQn73/Cxijn9s=
-github.com/slidebolt/sb-storage-sdk v1.0.2/go.mod h1:0rwsfUNMzhnp/unyUPFaoiNTMTzvZrvETOetRI8QU1w=
+github.com/slidebolt/sb-storage-sdk v1.0.3 h1:skdIQ+kDgKS/uT0mCR+ucOGr06aFZ9eJmTPI8epJ8Ro=
+github.com/slidebolt/sb-storage-sdk v1.0.3/go.mod h1:0rwsfUNMzhnp/unyUPFaoiNTMTzvZrvETOetRI8QU1w=
 github.com/slidebolt/sb-storage-server v1.0.2 h1:PGV1WdjRPgR/u031nGJcpNEht+u150fqsvpsSVLCZGo=
 github.com/slidebolt/sb-storage-server v1.0.2/go.mod h1:4/uC1mW0hhM9z8f9w+RyDJVtZtqNjVcc6T2wxpENvn4=
 github.com/slidebolt/sb-testkit v1.0.2 h1:G3uJBIHKWtzK83TQbxk7sQZwgLhMWBE+XhNWpGpZOHc=
