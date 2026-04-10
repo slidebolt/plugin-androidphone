@@ -3,13 +3,13 @@ module github.com/slidebolt/plugin-androidphone
 go 1.26.1
 
 require (
-	github.com/slidebolt/sb-api v1.0.4
-	github.com/slidebolt/sb-contract v1.0.4
-	github.com/slidebolt/sb-domain v1.0.4
-	github.com/slidebolt/sb-messenger-sdk v1.0.4
-	github.com/slidebolt/sb-runtime v1.0.4
-	github.com/slidebolt/sb-storage-sdk v1.0.4
-	github.com/slidebolt/sb-testkit v1.0.2
+	github.com/slidebolt/sb-api v1.0.7
+	github.com/slidebolt/sb-contract v1.0.5
+	github.com/slidebolt/sb-domain v1.0.5
+	github.com/slidebolt/sb-messenger-sdk v1.0.6
+	github.com/slidebolt/sb-runtime v1.0.5
+	github.com/slidebolt/sb-storage-sdk v1.0.5
+	github.com/slidebolt/sb-testkit v1.0.5
 	golang.org/x/oauth2 v0.31.0
 )
 
@@ -59,8 +59,10 @@ require (
 	github.com/nats-io/nats.go v1.49.0 // indirect
 	github.com/nats-io/nkeys v0.4.15 // indirect
 	github.com/nats-io/nuid v1.0.1 // indirect
-	github.com/slidebolt/sb-script v1.0.4 // indirect
-	github.com/slidebolt/sb-storage-server v1.0.4 // indirect
+	github.com/slidebolt/sb-logging-sdk v1.0.1 // indirect
+	github.com/slidebolt/sb-script v1.0.6 // indirect
+	github.com/slidebolt/sb-storage-server v1.0.6 // indirect
+	github.com/slidebolt/sb-virtual v1.0.6 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect
 	github.com/yosida95/uritemplate/v3 v3.0.2 // indirect
