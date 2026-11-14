@@ -35,6 +35,11 @@ func (a *App) Hello() contract.HelloResponse {
 		ContractVersion: contract.ContractVersion,
 		Definitions:     contract.DescribePlugin("Android Phone", "Connects Android phones and translates notifications and audio playback into shared contracts.", "phone"),
 		DependsOn:       []string{"messenger", "storage"},
+		Setup: &contract.SetupDefinition{Mode: contract.SetupSelectable, Category: "Notifications", Fields: []contract.SetupField{
+			{Key: "fcm_project_id", Environment: "ANDROIDPHONE_FCM_PROJECT_ID", Name: "Firebase project ID", Description: "Optional Firebase Cloud Messaging project used for outbound phone notifications.", Control: contract.SetupText},
+			{Key: "fcm_credentials_file", Environment: "ANDROIDPHONE_FCM_CREDENTIALS_JSON", Name: "Firebase credentials file", Description: "Service-account JSON file for Firebase Cloud Messaging.", Control: contract.SetupFile, Sensitive: true, Export: "file_contents"},
+			{Key: "fcm_base_url", Environment: "ANDROIDPHONE_FCM_BASE_URL", Name: "Firebase API URL", Description: "Firebase Messaging API base URL.", Control: contract.SetupText, Format: "uri", Advanced: true, Default: json.RawMessage(`"https://fcm.googleapis.com"`)},
+		}, Constraints: []contract.SetupConstraint{{Kind: "all_or_none", Fields: []string{"fcm_project_id", "fcm_credentials_file"}}}},
 	}
 }
 
