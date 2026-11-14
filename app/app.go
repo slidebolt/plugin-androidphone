@@ -33,6 +33,7 @@ func (a *App) Hello() contract.HelloResponse {
 		ID:              PluginID,
 		Kind:            contract.KindPlugin,
 		ContractVersion: contract.ContractVersion,
+		Definitions:     contract.DescribePlugin("Android Phone", "Connects Android phones and translates their capabilities into shared phone contracts.", "phone"),
 		DependsOn:       []string{"messenger", "storage"},
 	}
 }
