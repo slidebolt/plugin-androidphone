@@ -3,6 +3,7 @@ package app
 import (
 	"context"
 	"encoding/json"
+	"strings"
 	"sync"
 	"testing"
 	"time"
@@ -74,7 +75,7 @@ func savePhoneEntity(t *testing.T, env *testkit.TestEnv) domain.Entity {
 		DeviceID: "pixel8",
 		Type:     "phone",
 		Name:     "Pixel 8",
-		Commands: []string{"phone_register_push_token", "phone_send_notification", "phone_send_data_message"},
+		Commands: []string{"phone_register_push_token", "phone_send_notification", "phone_send_data_message", "media_play"},
 		State:    domain.Phone{Platform: "android"},
 	}
 	if err := env.Storage().Save(entity); err != nil {
@@ -220,6 +221,26 @@ func TestHandleCommand_SendNotificationUsesStoredToken(t *testing.T) {
 	}
 	if state.LastNotificationError != "" {
 		t.Fatalf("lastNotificationError = %q", state.LastNotificationError)
+	}
+}
+
+func TestHandleCommand_MediaPlayUsesProviderNeutralPush(t *testing.T) {
+	now := time.Date(2026, 3, 26, 16, 6, 0, 0, time.UTC)
+	sender := newFakeSender()
+	_, env, cmds := startApp(t, sender, now)
+	entity := savePhoneEntity(t, env)
+	internal, _ := json.Marshal(storedPushToken{Token: "token-xyz", RegisteredAt: now.Format(time.RFC3339)})
+	if err := env.Storage().WriteFile(storage.Internal, entity, internal); err != nil {
+		t.Fatal(err)
+	}
+	source := domain.PlayableSource{Kind: "item", Item: &domain.MediaItemRef{Provider: "plugin-test", ServerID: "sounds", ItemID: "doorbell"}}
+	if err := cmds.Send(entity, domain.MediaPlay{Source: &source}); err != nil {
+		t.Fatal(err)
+	}
+	waitFor(t, sender.notifyC)
+	call := sender.snapshot()[0]
+	if call.Msg.Data["slidebolt.action"] != "media_play" || !strings.Contains(call.Msg.Data["slidebolt.source"], "doorbell") {
+		t.Fatalf("push data = %#v", call.Msg.Data)
 	}
 }
 

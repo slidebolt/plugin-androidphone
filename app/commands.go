@@ -48,9 +48,25 @@ func (a *App) handleCommand(addr messenger.Address, cmd any) {
 		if err := a.sendDataMessage(key, entity, c); err != nil {
 			log.Printf("plugin-androidphone: send data message for %s: %v", addr.Key(), err)
 		}
+	case domain.MediaPlay:
+		if err := a.playMedia(key, entity, c); err != nil {
+			log.Printf("plugin-androidphone: play media for %s: %v", addr.Key(), err)
+		}
 	default:
 		log.Printf("plugin-androidphone: unknown command %T for %s", cmd, addr.Key())
 	}
+}
+
+func (a *App) playMedia(key domain.EntityKey, entity domain.Entity, cmd domain.MediaPlay) error {
+	source, err := json.Marshal(cmd.Source)
+	if err != nil {
+		return fmt.Errorf("marshal media source: %w", err)
+	}
+	return a.sendPush(key, entity, outboundPush{Data: map[string]string{
+		"slidebolt.action":   "media_play",
+		"slidebolt.source":   string(source),
+		"slidebolt.position": fmt.Sprint(cmd.PositionMS),
+	}})
 }
 
 func (a *App) registerPushToken(key domain.EntityKey, entity domain.Entity, cmd domain.PhoneRegisterPushToken) error {
@@ -65,6 +81,7 @@ func (a *App) registerPushToken(key domain.EntityKey, entity domain.Entity, cmd 
 		return fmt.Errorf("write internal token: %w", err)
 	}
 
+	entity.Commands = appendCommand(entity.Commands, "media_play")
 	return a.updatePhoneState(entity, func(state *domain.Phone) {
 		state.Online = true
 		state.PushTokenConfigured = true
@@ -77,6 +94,15 @@ func (a *App) registerPushToken(key domain.EntityKey, entity domain.Entity, cmd 
 		state.AppVersion = firstNonEmpty(cmd.AppVersion, state.AppVersion)
 		state.LastNotificationError = ""
 	})
+}
+
+func appendCommand(commands []string, command string) []string {
+	for _, existing := range commands {
+		if existing == command {
+			return commands
+		}
+	}
+	return append(commands, command)
 }
 
 func (a *App) sendNotification(key domain.EntityKey, entity domain.Entity, cmd domain.PhoneSendNotification) error {

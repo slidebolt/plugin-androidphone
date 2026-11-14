@@ -33,6 +33,5 @@ Thumbs.db
 dist/
 build/
 bin/
-/plugin-clean
-/sb-plugin-clean
+/plugin-androidphone
 !.env.example
