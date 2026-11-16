@@ -4,12 +4,12 @@ go 1.26.1
 
 require (
 	github.com/slidebolt/sb-api v1.0.18
-	github.com/slidebolt/sb-contract v1.0.9
-	github.com/slidebolt/sb-domain v1.0.24
+	github.com/slidebolt/sb-contract v1.0.15
+	github.com/slidebolt/sb-domain v1.0.27
 	github.com/slidebolt/sb-messenger-sdk v1.0.9
 	github.com/slidebolt/sb-runtime v1.0.7
 	github.com/slidebolt/sb-storage-sdk v1.0.8
-	github.com/slidebolt/sb-testkit v1.0.17
+	github.com/slidebolt/sb-testkit v1.0.18
 	golang.org/x/oauth2 v0.31.0
 )
 
@@ -65,7 +65,7 @@ require (
 	github.com/slidebolt/sb-scheduler v0.2.1 // indirect
 	github.com/slidebolt/sb-scheduler-sdk v0.2.0 // indirect
 	github.com/slidebolt/sb-script v1.0.19 // indirect
-	github.com/slidebolt/sb-storage-server v1.0.11 // indirect
+	github.com/slidebolt/sb-storage-server v1.0.13 // indirect
 	github.com/slidebolt/sb-virtual v1.0.16 // indirect
 	github.com/spf13/cast v1.7.1 // indirect
 	github.com/wk8/go-ordered-map/v2 v2.1.8 // indirect

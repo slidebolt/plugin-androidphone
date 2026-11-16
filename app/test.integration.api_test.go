@@ -127,8 +127,9 @@ func TestIntegration_HTTPAPIEntityAndCommandFlow(t *testing.T) {
 func bootstrapAPIToken(t *testing.T, baseURL string) string {
 	t.Helper()
 	body, _ := json.Marshal(map[string]any{
-		"name":   "integration-test",
-		"scopes": []string{"read", "control", "write", "admin"},
+		"name":           "integration-test",
+		"access":         "admin",
+		"securityGroups": []string{"*"},
 	})
 	req, err := http.NewRequest(http.MethodPost, baseURL+"/tokens", bytes.NewReader(body))
 	if err != nil {
